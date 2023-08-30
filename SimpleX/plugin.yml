@@ -1,0 +1,45 @@
+main: davigamer161.simplex.SimpleX
+version: 1.4.3
+name: SimpleX
+softdepend: [Vault]
+
+commands:
+  simplex.*:
+    default: op
+    description: Todos los permisos
+  setspawn:
+    description: Comando para crear el spawn
+  spawn:
+    description: Comando para ir al spawn
+  heal:
+    description: Comando para curar
+  fly:
+    description: Comando para usar fly
+  simplex:
+    description: Comando principal
+    aliases: [sx]
+permissions:
+  simplex.help:
+    description: Sirve para ver lista de comandos
+  simplex.reload:
+    description: Sirve para recargar el plugin
+  simplex.version:
+    description: Sirve para ver la version del plugin
+  simplex.econ.exempt:
+    description: Sirve para no pagar al usar un comando
+  simplex.econ.exempt.others:
+    description: Sirve para no pagar al usar un comando para otros
+  simplex.setspawn:
+    description: Sirve para crear el spawn
+  simplex.spawn:
+    description: Sirve para ir al spawn
+  simplex.spawn.others:
+    description: Sirve para llevar a otro al spawn
+  simplex.heal:
+    description: Sirve para curarte
+  simplex.heal.others:
+    description: Sirve para curar a otros
+  simplex.fly:
+    description: Sirve para usar fly
+  simplex.fly.others:
+    description: Sirve para usar fly a otros

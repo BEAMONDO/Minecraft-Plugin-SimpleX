@@ -1,0 +1,62 @@
+# ################################################################################## #
+# +--------------------------------------------------------------------------------+ #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                   \  /                         | #
+# |                     __          __        ___      \/                          | #
+# |                    /__` | |\/| |__) |    |_        /\                          | #
+# |                    .__/ | |  | |    |___ |___     /  \                         | #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# |      Youtube:    www.youtube.com/@davigamer1614                                | #
+# |      Github:     https://github.com/BEAMONDO/Minecraft-Plugin-SimpleX          | #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# +--------------------------------------------------------------------------------+ #
+# ################################################################################## #
+
+
+#   help-message: enable or disable the command message "/sx help"
+#   reload-message: enable or disable the command message "/sx reload"
+#   version-message: enable or disable the command message "/sx version"
+#   no-argument-message: enable or disable the command message "/sx" if it not have any argument
+#   no-perm-message: enable or disable message when use a command and don`t have permission
+
+
+#   spawn-message: enable or disable the command message "/spawn" and "/spawn <player>"
+#   setspawn-message: enable or disable the command message "/setspawn"
+#   pay-to-spawn: enable or disable the option to pay to spawn (if enable is necessary the plugin Vault)
+#   spawn-price: amount to pay if use "/spawn" command if (pay-to-spawn) is enable
+
+
+#   heal-message: enable or disable the command message "/heal" and "/heal <player>"
+#   pay-to-heal: enable or disable the option to pay to heal (if enable is necessary the plugin Vault)
+#   heal-price: amount to pay if use "/heal" command if (pay-to-heal) is enable
+
+
+#   fly-message: enable or disable the command message "/fly" and "/fly <player>"
+#   pay-to-fly: enable or disable the option to pay to fly (if enable is necessary the plugin Vault)
+#   fly-price: amount to pay if use "/fly" command if (pay-to-fly) is enable
+
+
+Config:
+  help-message: true
+  reload-message: true
+  version-message: true
+  no-argument-message: true
+  no-perm-message: true
+  spawn:
+    setspawn-message: true
+    spawn-message: true
+    pay-to-spawn: false
+    spawn-price: 1000
+  heal:
+    heal-message: true
+    pay-to-heal: false
+    heal-price: 1000
+  fly:
+    fly-message: true
+    pay-to-fly: false
+    fly-price: 1000
