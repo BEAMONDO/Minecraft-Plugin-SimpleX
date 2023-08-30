@@ -1,0 +1,58 @@
+Messages:
+  help:
+  - '&b<-----------------&aCOMANDOS&b----------------->'
+  - '&e/sx help &7Muestra este mensaje'
+  - '&e/sx version &7Version del plugin'
+  - '&e/sx reload &7Recargar el plugin'
+  - '&e/setspawn &7Crea el spawn'
+  - '&e/spawn &7Te transporta al spawn'
+  - '&e/spawn <player> &7Transporta a otros al spawn'
+  - '&e/heal &7Recuperar vida'
+  - '&e/heal <player> &7Recuperar vida a un jugador'
+  - '&e/fly &7Activa fly'
+  - '&e/fly <player> &7Activa fly para otro jugador'
+  reload:
+  - '%plugin% &aEl plugin ha sido recargado'
+  version:
+  - '%plugin% &aVersion &b%version%'
+  command-no-argument:
+  - '%plugin% &fUsa &e/sf help &fpara ver la lista de comandos'
+  no-perm:
+  - '%plugin% &cNo tienes permiso para ejecutar ese comando'
+  console-error:
+  - 'No puedes ejecutar ese comando desde la consola'
+  spawn:
+    setspawn:
+    - '%plugin% &aEl spawn ha sido colocado'
+    no-exist:
+    - '%plugin% &cEl spawn no existe'
+    teleport:
+    - '%plugin% &aTe has transportado al spawn'
+    no-money-to-teleport:
+    - '%plugin% &cNo tienes suficiente dinero para transportarte al spawn'
+    teleport-others:
+    - '%plugin% &aHas transportado a &6%target% &aal spawn'
+    no-money-to-teleport-others:
+    - '%plugin% &cNo tienes suficiente dinero para transportar a &6%target% &cal spawn'
+  heal:
+    heal:
+    - '%plugin% &aHas sido curado'
+    no-enought-money-to-heal:
+    - '%plugin% &cNo tienes suficiente dinero para curarte'
+    heal-others-text:
+    - '%plugin% &aHas curado a &6%target%'
+    no-enought-money-to-heal-others:
+    - '%plugin% &cNo tienes suficiente dinero para curar a &6%target%'
+  fly:
+    enabled:
+    - '%plugin% &aFly ha sido activado'
+    disabled:
+    - '%plugin% &cFly ha sido desactivado'
+    enabled-others:
+    - '%plugin% &aHas activado el fly a &6%target%'
+    disabled-others:
+    - '%plugin% &Has desactivado el fly a &6%target%'
+    no-enought-money:
+    - '%plugin% &cNo tienes suficiente dinero para volar'
+    no-enought-money-others:
+    - '%plugin% &cNo tienes suficiente dinero para hacer volar a &6%target%'
