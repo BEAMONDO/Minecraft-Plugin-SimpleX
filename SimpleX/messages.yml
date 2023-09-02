@@ -1,58 +1,39 @@
 Messages:
+  spawn:
+    setspawn: '%plugin% &aSpawn has been placed'
+    no-exist: '%plugin% &cSpawn doesn`t exist'
+    teleport: '%plugin% &aYou teleported to spawn'
+    teleport-others: '%plugin% &aYou teleport &6%target% &ato spawn'
+    no-enought-money: '%plugin% &cYou don`t have enough money to teleport to spawn'
+    no-enought-money-others: '%plugin% &cYou don`t have enough money to teleport &6%target% &cto spawn'
+  heal:
+    heal: '%plugin% &aYou have been healed'
+    heal-others: '%plugin% &aYou healed &6%target%'
+    no-enought-money: '%plugin% &cYou don`t have enough money to heal yourself'
+    no-enought-money-others: '%plugin% &cYou don`t have enough money to heal &6%target%'
+  fly:
+    enabled: '%plugin% &aFly has been enabled'
+    disabled: '%plugin% &cFly has been disabled'
+    enabled-others: '%plugin% &aYou enable fly to &6%target%'
+    disabled-others: '%plugin% &cYou disable fly to &6%target%'
+    no-enought-money: '%plugin% &cYou don`t have enough money to fly'
+    no-enought-money-others: '%plugin% &cYou don`t have enough money to enable fly to &6%target%'
   help:
   - '&b<-----------------&aCOMMANDS&b----------------->'
   - '&e/sx help &7Show this message'
   - '&e/sx version &7Show plugin version'
   - '&e/sx reload &7Reload plugin'
+  - '&e/sx plugin &7Show plugin download link'
   - '&e/setspawn &7Create a spawn'
   - '&e/spawn &7Teleport to spawn'
-  - '&e/spawn <player> &7Teleport others to spawn'
+  - '&e/spawn <player> &7Teleport other player to spawn'
   - '&e/heal &7Heal you'
-  - '&e/heal <player> &7Heal player'
+  - '&e/heal <player> &7Heal other player'
   - '&e/fly &7Enable or disable fly'
   - '&e/fly <player> &7Enable or disable fly to other player'
-  reload:
-  - '%plugin% &aThe plugin has been reloaded'
-  version:
-  - '%plugin% &aPlugin version: &b%version%'
-  command-no-argument:
-  - '%plugin% &fUse &e/sx help &fto see the command list'
-  no-perm:
-  - '%plugin% &cYou don`t have permission to use that command'
-  console-error:
-  - You can`t use that command in console
-  spawn:
-    setspawn:
-    - '%plugin% &aSpawn has been placed'
-    no-exist:
-    - '%plugin% &cSpawn doesn`t exist'
-    teleport:
-    - '%plugin% &aYou teleported to spawn'
-    no-money-to-teleport:
-    - '%plugin% &cYou don`t have enough money to teleport to spawn'
-    teleport-others:
-    - '%plugin% &aYou teleport &6%target% &ato spawn'
-    no-money-to-teleport-others:
-    - '%plugin% &cYou don`t have enough money to teleport &6%target% &cto spawn'
-  heal:
-    heal:
-    - '%plugin% &aYou have been healed'
-    no-money-to-heal:
-    - '%plugin% &cYou don`t have enough money to heal yourself'
-    heal-others:
-    - '%plugin% &aYou healed &6%target%'
-    no-money-to-heal-others:
-    - '%plugin% &cYou don`t have enough money to heal &6%target%'
-  fly:
-    enabled:
-    - '%plugin% &aFly has been enabled'
-    disabled:
-    - '%plugin% &cFly has been disabled'
-    enabled-others:
-    - '%plugin% &aYou enable fly to &6%target%'
-    disabled-others:
-    - '%plugin% &cYou disable fly to &6%target%'
-    no-enought-money:
-    - '%plugin% &cYou don`t have enough money to fly'
-    no-enought-money-others:
-    - '%plugin% &cYou don`t have enough money to enable fly to &6%target%'
+  reload: '%plugin% &aThe plugin has been reloaded'
+  version: '%plugin% &aPlugin version: &b%version%'
+  command-no-argument: '%plugin% &fUse &e/sx help &fto see the command list'
+  no-perm: '%plugin% &cYou don`t have permission to use that command'
+  console-error: You can`t use that command in console
+  update-checker: '%plugin% &bThere is a new version &e(&f%latestversion%&e)&b. Download it here: &7https://www.spigotmc.org/resources/112389/'

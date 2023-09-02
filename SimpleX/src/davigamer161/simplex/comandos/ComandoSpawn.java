@@ -1,7 +1,5 @@
 package davigamer161.simplex.comandos;
 
-import java.util.List;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -18,7 +16,6 @@ import net.milkbowl.vault.economy.Economy;
 public class ComandoSpawn implements CommandExecutor{
 
     private SimpleX plugin;
-
     public ComandoSpawn(SimpleX plugin){
         this.plugin = plugin;
     }
@@ -31,6 +28,7 @@ public class ComandoSpawn implements CommandExecutor{
 	    Player jugador = (Player) sender;
 		if(args.length == 0){
             String poth = "Config.spawn.pay-to-spawn";
+            String path = "Config.spawn.spawn-message";
             if(jugador.hasPermission("simplex.spawn")){
                 if(config.contains("Config.spawn.spawn-location.x")){
                     if(config.getString(poth).equals("true")){
@@ -45,13 +43,9 @@ public class ComandoSpawn implements CommandExecutor{
                                 teleportMethod(jugador);
                                 spawnMethod(jugador);
                             }else{
-                                String path = "Config.spawn.spawn-message";
                                 if(config.getString(path).equals("true")){
-                                List<String> mensaje = messages.getStringList("Messages.spawn.no-money-to-teleport");
-                                    for(int i=0;i<mensaje.size();i++){
-                                        String texto = mensaje.get(i);
-                                        jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
-                                    }
+                                String mensaje = messages.getString("Messages.spawn.no-enought-money");
+                                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', mensaje.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                                 }
                             }
                     }else{
@@ -66,6 +60,7 @@ public class ComandoSpawn implements CommandExecutor{
             }
         }else if(args.length == 1){
             String poth = "Config.spawn.pay-to-spawn";
+            String path = "Config.spawn.spawn-message";
             if(jugador.hasPermission("simplex.spawn.others")){
                 if(config.contains("Config.spawn.spawn-location.x")){
                     if(config.getString(poth).equals("true")){
@@ -76,47 +71,31 @@ public class ComandoSpawn implements CommandExecutor{
                         if(jugador.hasPermission("simplex.econ.exempt.others")){
                             teleportMethod(target);
                             spawnMethod(target);
-                            String path = "Config.spawn.spawn-message";
                             if(config.getString(path).equals("true")){
-                                List<String> mensaje = messages.getStringList("Messages.spawn.teleport-others");
-                                for(int i=0;i<mensaje.size();i++){
-                                    String texto = mensaje.get(i);
-                                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
-                                }
+                                String mensaje = messages.getString("Messages.spawn.teleport-others");
+                                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', mensaje.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
                             }
                         }else if(dinero >=precio){
                         econ.withdrawPlayer(jugador, precio);
                         teleportMethod(target);
                         spawnMethod(target);
-                        String path = "Config.spawn.spawn-message";
                             if(config.getString(path).equals("true")){
-                                List<String> mensaje = messages.getStringList("Messages.spawn.teleport-others");
-                                for(int i=0;i<mensaje.size();i++){
-                                    String texto = mensaje.get(i);
-                                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
-                                }
+                                String mensaje = messages.getString("Messages.spawn.teleport-others");
+                                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', mensaje.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
                             }
                         }else{
-                            String path = "Config.spawn.spawn-message";
                             if(config.getString(path).equals("true")){
-                                List<String> mensaje = messages.getStringList("Messages.spawn.no-money-to-teleport-others");
-                                for(int i=0;i<mensaje.size();i++){
-                                    String texto = mensaje.get(i);
-                                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
-                                }
+                                String mensaje = messages.getString("Messages.spawn.no-enought-money-others");
+                                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', mensaje.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
                             }
                         }
                     }else{
                         Player target = Bukkit.getPlayer(args[0]);
                         teleportMethod(target);
                         spawnMethod(target);
-                        String path = "Config.spawn.spawn-message";
                         if(config.getString(path).equals("true")){
-                        List<String> mensaje = messages.getStringList("Messages.spawn.teleport-others");
-                            for(int i=0;i<mensaje.size();i++){
-                                String texto = mensaje.get(i);
-                                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
-                            }
+                        String mensaje = messages.getString("Messages.spawn.teleport-others");
+                            jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', mensaje.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
                         }
                     }
                 }else{
@@ -134,11 +113,8 @@ public class ComandoSpawn implements CommandExecutor{
         FileConfiguration messages = plugin.getMessages();
 		String path = "Config.spawn.spawn-message";
     	if(config.getString(path).equals("true")){
-            List<String> mensaje = messages.getStringList("Messages.spawn.teleport");
-            for(int i=0;i<mensaje.size();i++){
-                String texto = mensaje.get(i);
-                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
-            }
+            String mensaje = messages.getString("Messages.spawn.teleport");
+            jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', mensaje.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
         }
 	}
     private void teleportMethod(Player jugador){
@@ -157,11 +133,8 @@ public class ComandoSpawn implements CommandExecutor{
         FileConfiguration messages = plugin.getMessages();
         String path = "Config.spawn.spawn-message";
         if(config.getString(path).equals("true")){
-            List<String> mensaje = messages.getStringList("Messages.spawn.no-exist");
-            for(int i=0;i<mensaje.size();i++){
-                String texto = mensaje.get(i);
-                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
-            }
+            String mensaje = messages.getString("Messages.spawn.no-exist");
+            jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', mensaje.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
         }
 	}
 	private void noPermMethod(Player jugador){
@@ -169,16 +142,8 @@ public class ComandoSpawn implements CommandExecutor{
         FileConfiguration messages = plugin.getMessages();
 		String path = "Config.no-perm-message";
 		if(config.getString(path).equals("true")){
-			List<String> mensaje = messages.getStringList("Messages.no-perm");
-			for(int i=0;i<mensaje.size();i++){
-				String texto = mensaje.get(i);
-				jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
-			}
+			String mensaje = messages.getString("Messages.no-perm");
+			jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', mensaje.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
 		}
 	}
 }
-
-
-
-
-

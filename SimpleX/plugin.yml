@@ -1,12 +1,9 @@
 main: davigamer161.simplex.SimpleX
-version: 1.4.3
+version: 2.0.1
 name: SimpleX
 softdepend: [Vault]
 
 commands:
-  simplex.*:
-    default: op
-    description: Todos los permisos
   setspawn:
     description: Comando para crear el spawn
   spawn:
@@ -19,12 +16,19 @@ commands:
     description: Comando principal
     aliases: [sx]
 permissions:
+  simplex.*:
+    default: op
+    description: Todos los permisos
   simplex.help:
     description: Sirve para ver lista de comandos
   simplex.reload:
     description: Sirve para recargar el plugin
   simplex.version:
     description: Sirve para ver la version del plugin
+  simplex.plugin:
+    description: Sirve para ver el link de descarga del plugin
+  simplex.updatechecker:
+    description: Sirve para comprobar si hay una nueva version del plugin
   simplex.econ.exempt:
     description: Sirve para no pagar al usar un comando
   simplex.econ.exempt.others:

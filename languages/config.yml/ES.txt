@@ -18,33 +18,26 @@
 # ################################################################################## #
 
 
-#   help-message: activar o desactivar el mensaje del comando "/sx help"
-#   reload-message: activar o desactivar el mensaje del comando "/sx reload"
-#   version-message: activar o desactivar el mensaje del comando "/sx version"
+#   update-message: activar o desactivar el mensaje de actualizacion disponible al entrar al servidor
 #   no-argument-message: activar o desactivar el mensaje del comando "/sx" en el caso de no tener ningun argumento
 #   no-perm-message: activar o desactivar el mensaje para cuando usas un comando y no tienes permiso
 
-
 #   spawn-message: activar o desactivar el mensaje del comando "/spawn" y "/spawn <player>"
 #   setspawn-message: activar o desactivar el mensaje del comando "/setspawn"
-#   pay-to-spawn: activar o desactivar la opcion de pagar para ir al spawn (si se activa es necesario el plugin Vault)
+#   pay-to-spawn: activar o desactivar la opcion de pagar para ir al spawn (si se activa es necesario el plugin Vault y EssentialsX)
 #   spawn-price: cantidad a pagar al usar "/spawn" si la opcion (pay-to-spawn) esta activa
 
-
 #   heal-message: activar o desactivar el mensaje del comando "/heal" y "/heal <player>"
-#   pay-to-heal: activar o desactivar la opcion de pagar para curar (si se activa es necesario el plugin Vault)
+#   pay-to-heal: activar o desactivar la opcion de pagar para curar (si se activa es necesario el plugin Vault y EssentialsX)
 #   heal-price: cantidad a pagar al usar "/heal" si la opcion (pay-to-heal) esta activa
 
-
 #   fly-message: activar o desactivar el mensaje del comando "/fly" y "/fly <player>"
-#   pay-to-fly: activar o desactivar la opcion de pagar para volar (si se activa es necesario el plugin Vault)
+#   pay-to-fly: activar o desactivar la opcion de pagar para volar (si se activa es necesario el plugin Vault y EssentialsX)
 #   fly-price: cantidad a pagar al usar "/fly" si la opcion (pay-to-fly) esta activa
 
 
 Config:
-  help-message: true
-  reload-message: true
-  version-message: true
+  update-message: true
   no-argument-message: true
   no-perm-message: true
   spawn:

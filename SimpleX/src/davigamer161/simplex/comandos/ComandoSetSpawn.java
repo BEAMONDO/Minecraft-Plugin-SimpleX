@@ -1,7 +1,5 @@
 package davigamer161.simplex.comandos;
 
-import java.util.List;
-
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -15,7 +13,6 @@ import davigamer161.simplex.SimpleX;
 public class ComandoSetSpawn implements CommandExecutor{
 
     private SimpleX plugin;
-
     public ComandoSetSpawn(SimpleX plugin){
         this.plugin = plugin;
     }
@@ -43,20 +40,14 @@ public class ComandoSetSpawn implements CommandExecutor{
                 plugin.saveConfig();
                 String path = "Config.spawn.setspawn-message";
                 if(config.getString(path).equals("true")){
-                    List<String> mensaje = messages.getStringList("Messages.spawn.setspawn");
-                    for(int i=0;i<mensaje.size();i++){
-                        String texto = mensaje.get(i);
-                        jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
-                    }
+                    String mensaje = messages.getString("Messages.spawn.setspawn");
+                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', mensaje.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                 }
             }else{
                 String path = "Config.no-perm-message";
                 if(config.getString(path).equals("true")){
-                    List<String> mensaje = messages.getStringList("Messages.no-perm");
-                    for(int i=0;i<mensaje.size();i++){
-                        String texto = mensaje.get(i);
-                        jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
-                    }
+                    String mensaje = messages.getString("Messages.no-perm");
+                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', mensaje.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                 }
             }
         
