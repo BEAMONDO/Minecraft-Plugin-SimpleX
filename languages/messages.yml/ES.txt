@@ -33,7 +33,7 @@ Messages:
   - '&e/fly <player> &7Activa fly para otro jugador'
   reload: '%plugin% &aEl plugin ha sido recargado'
   version: '%plugin% &aVersion &b%version%'
-  command-no-argument: '%plugin% &fUsa &e/sf help &fpara ver la lista de comandos'
+  command-no-argument: '%plugin% &fUsa &e/sx help &fpara ver la lista de comandos'
   no-perm: '%plugin% &cNo tienes permiso para ejecutar ese comando'
   console-error: 'No puedes ejecutar ese comando desde la consola'
   update-checker: '%plugin% &bHay una nueva version &e(&f%latestversion%&e)&b. Descargala aqui: &7https://www.spigotmc.org/resources/112389/'
